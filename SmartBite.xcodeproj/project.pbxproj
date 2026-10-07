@@ -10,9 +10,22 @@
 		E293D3D03076E01F006B23A1 /* SmartBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E293D3E93076E4E4006B23A1 /* Exceptions for "SmartBite" folder in "SmartBite" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E293D3CF3076E01F006B23A1 /* SmartBite */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E293D3D23076E01F006B23A1 /* SmartBite */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E293D3E93076E4E4006B23A1 /* Exceptions for "SmartBite" folder in "SmartBite" target */,
+			);
 			path = SmartBite;
 			sourceTree = "<group>";
 		};
@@ -256,6 +269,8 @@
 				DEVELOPMENT_TEAM = 567WTL73LV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartBite/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "SmartBite uses your camera to scan food items.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -288,6 +303,8 @@
 				DEVELOPMENT_TEAM = 567WTL73LV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartBite/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "SmartBite uses your camera to scan food items.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
