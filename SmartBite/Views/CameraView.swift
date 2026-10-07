@@ -27,43 +27,48 @@ struct CameraView: View{
                                 .cornerRadius(12)
                                 .clipped()
                                 .padding(.top, 15)
-                            HStack{
+                                .padding(.bottom, 15)
+                            ZStack{
                                 Spacer()
                                 Button{ //click photo button by calling function
                                     cameraManager.capturePhoto()
                                 } label: {
                                     Circle()
                                         .strokeBorder(.white, lineWidth: 3)
-                                        .frame(width: 90, height:90)
+                                        .frame(width: 70, height:70)
                                         .overlay {
                                             Circle()
                                                 .fill(.white)
-                                                .frame(width:80, height: 80)
+                                                .frame(width:60, height: 60)
                                         }
                                     
                                 }
-                                Spacer()
+                                
                                 if let latest = cameraManager.capturedImages.last{
-                                    Button {
-                                        selectedPhotoIndex = cameraManager.capturedImages.count - 1
-                                        showingReview = true
-                                    } label: {
-                                        Image(uiImage: latest.image)
-                                            .resizable()
-                                            .scaledToFill()
-                                            .frame(width: 60, height: 60)
-                                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                                            .overlay{
-                                                RoundedRectangle(cornerRadius: 10)
-                                                    .stroke(.white, lineWidth: 2)
-                                            }
-                                            .clipped()
+                                    HStack{
+                                        Spacer()
+                                        Button {
+                                            selectedPhotoIndex = 0//cameraManager.capturedImages.count - 1
+                                            showingReview = true
+                                        } label: {
+                                            Image(uiImage: latest.image)
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(width: 60, height: 60)
+                                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                                .overlay{
+                                                    RoundedRectangle(cornerRadius: 10)
+                                                        .stroke(.white, lineWidth: 2)
+                                                }
+                                                .clipped()
+                                        }
                                     }
-                                } else {
-                                    Color.clear
-                                        .frame(width: 60, height: 60)
+                                    } else {
+                                        Color.clear
+                                            .frame(width: 60, height: 60)
+                                    }
                                 }
-                            }
+
                         }
                     } else { //must have authroization, else leads to setting from this screen
                         VStack{
