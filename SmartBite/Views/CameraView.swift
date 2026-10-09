@@ -43,7 +43,6 @@ struct CameraView: View{
                                         }
                                     
                                 }
-                                
                                 if let latest = cameraManager.capturedImages.last{
                                     HStack{
                                         Spacer()
@@ -68,7 +67,6 @@ struct CameraView: View{
                                             .frame(width: 60, height: 60)
                                     }
                                 }
-
                         }
                     } else { //must have authroization, else leads to setting from this screen
                         VStack{
@@ -91,10 +89,7 @@ struct CameraView: View{
                         }
                     }
                 }
-                
                 Spacer()
-                
-                
             }
             //                .sheet(item: $cameraManager.capturedImage){ //clears image value when app opens and the preview screen is swiped down
             //                    item in
@@ -112,7 +107,5 @@ struct CameraView: View{
         .fullScreenCover(isPresented: $showingReview){
             ReviewPhotosView(images: cameraManager.capturedImages, selectedIndex: $selectedPhotoIndex, isPresented: $showingReview)
         }
-        
     }
-    
 }

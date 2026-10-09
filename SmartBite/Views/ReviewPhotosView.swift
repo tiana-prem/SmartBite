@@ -29,9 +29,15 @@ struct ReviewPhotosView: View{
                     Text("\(selectedIndex+1) / \(images.count)")
                         .foregroundStyle(Color.white)
                     Spacer()
-                    Image(systemName: "xmark")
-                        .font(.title2)
-                        .opacity(0)
+                    NavigationLink{
+                        IngredientsView(images: images)
+                    } label: {
+                        Image(systemName: "arrow.right.circle.fill")
+                            .foregroundStyle(Color.white)
+                            .font(.title2)
+                    }
+                    
+        
                 }
                 .padding()
                 
