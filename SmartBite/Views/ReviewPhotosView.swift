@@ -29,6 +29,7 @@ struct ReviewPhotosView: View{
                     Text("\(selectedIndex+1) / \(images.count)")
                         .foregroundStyle(Color.white)
                     Spacer()
+                    
                     NavigationLink{
                         IngredientsView(images: images)
                     } label: {

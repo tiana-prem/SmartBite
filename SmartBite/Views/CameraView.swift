@@ -105,7 +105,9 @@ struct CameraView: View{
             .padding()
         }
         .fullScreenCover(isPresented: $showingReview){
-            ReviewPhotosView(images: cameraManager.capturedImages, selectedIndex: $selectedPhotoIndex, isPresented: $showingReview)
+            NavigationStack{
+                ReviewPhotosView(images: cameraManager.capturedImages, selectedIndex: $selectedPhotoIndex, isPresented: $showingReview)
+            }
         }
     }
 }
