@@ -62,7 +62,7 @@ struct ingredientIdentify {
             guard !base64Images.isEmpty else { return "Error - No images to analyze" }
             guard let url = URL(string: "http://10.90.252.90:11434/api/chat") else { return "Error" }
            
-            var request = URLRequest(url: url)
+            var request = URLRequest(url: url, timeoutInterval: 45)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type") //data can be sent to outside serve
             
@@ -101,6 +101,9 @@ struct ingredientIdentify {
 
                 let(data, response) = try await URLSession.shared.data(for: request) //runs it through the model, waits for the data response back
                 
+                guard let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode) else {
+                    return "Error: AI server request failed"
+                }
                 print("Qwen responded!")
                 
 
